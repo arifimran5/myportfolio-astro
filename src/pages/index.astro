@@ -1,0 +1,41 @@
+---
+import ProjectList from '../components/ProjectList.astro';
+import Social from '../components/Social.astro';
+import Technologies from '../components/Technologies.astro';
+import Document from '../layouts/Document.astro';
+---
+
+<Document title='Hola 🌈'>
+  <main class='mt-16'>
+    <h1 class='font-semibold text-2xl'>Hi 👋 I am Arif Imran</h1>
+    <section class='flex items-center gap-2 mt-3'>
+      <Social
+        src='/svgs/twitter.svg'
+        title='arifdotai'
+        link='https://twitter.com/arifdotai'
+      />
+      <Social
+        src='/svgs/github.svg'
+        title='arifimran5'
+        link='https://github.com/arifimran5'
+      />
+    </section>
+    <p class='mt-4 text-sm leading-normal sm:text-base sm:leading-6'>
+      Frontend developer, based in India. Learning web ecosystem and building
+      side projects. Generally, optimizing time & space complexities of
+      algorithmic problems on leetcode. Tired of TLE ☠
+    </p>
+
+    <section>
+      <h1 class='mt-10 font-semibold text-2xl'>What did I build 👀</h1>
+      <ProjectList />
+    </section>
+
+    <section>
+      <h1 class='mt-10 font-semibold text-2xl'>Technologies I use 🥵</h1>
+      <Technologies />
+    </section>
+  </main>
+</Document>
+
+<style></style>

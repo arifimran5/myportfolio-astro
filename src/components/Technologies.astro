@@ -1,0 +1,45 @@
+---
+const techs = [
+  {
+    id: 1,
+    title: 'React',
+    thumbnail: '/svgs/react.svg',
+  },
+  {
+    id: 2,
+    title: 'NextJS',
+    thumbnail: '/svgs/next.svg',
+  },
+  {
+    id: 3,
+    title: 'NodeJS',
+    thumbnail: '/svgs/node.svg',
+  },
+  {
+    id: 4,
+    title: 'Typescript',
+    thumbnail: '/svgs/ts.svg',
+  },
+  {
+    id: 5,
+    title: 'Figma',
+    thumbnail: '/svgs/figma.svg',
+  },
+  {
+    id: 1,
+    title: 'Tailwind',
+    thumbnail: '/svgs/tailwind.svg',
+  },
+];
+---
+
+<div class='grid grid-cols-2 sm:grid-cols-3 gap-y-8 mt-6'>
+  {
+    techs.map((tech) => (
+      <div class='flex justify-left items-center gap-3 bg-secondary_dark max-w-[10em] px-4 py-2 rounded-full'>
+        <img class='ml-2' src={tech.thumbnail} alt={tech.title} />
+        <span>{tech.title}</span>
+      </div>
+    ))
+  }
+</div>

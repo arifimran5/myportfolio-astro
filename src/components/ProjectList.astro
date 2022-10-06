@@ -1,0 +1,69 @@
+---
+const projects = [
+  {
+    id: 1,
+    name: 'Hacker News Stories',
+    link: 'https://github.com/arifimran5/hacker-news-clone',
+    cover: '/projects/hacker-news-cover.jpg',
+  },
+  {
+    id: 2,
+    name: 'ProCourses',
+    link: 'https://github.com/arifimran5/pro-courses',
+    cover: '/projects/procourses-cover.jpg',
+  },
+  {
+    id: 3,
+    name: 'Read&Watch',
+    link: 'https://github.com/arifimran5/read-and-watch',
+    cover: '/projects/readnwatch-cover.jpg',
+  },
+];
+---
+
+<section class='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 gap-4 mt-6'>
+  {
+    projects.map((project) => (
+      <div class=' h-[158px] project_over overflow-hidden relative z-30 rounded-[12px]'>
+        <div
+          class='project_inner flex h-full justify-center items-center'
+          style={`background-image:url(${project.cover}) ;`}
+        >
+          <a
+            href={project.link}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='font-bold z-40 hover:underline text-white'
+          >
+            <h2>{project.name}</h2>
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .project_inner {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -100000;
+  }
+  .project_over:last-child {
+    grid-column: span 2 / span 2;
+  }
+
+  .project_inner:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .project_inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.652);
+    z-index: 0;
+  }
+</style>

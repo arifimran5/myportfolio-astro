@@ -1,0 +1,58 @@
+---
+export interface Props {
+  src: string;
+  title: string;
+  link: string;
+}
+const { src, title, link } = Astro.props;
+---
+
+<div class='rainbow rounded-full'>
+  <a
+    href={link}
+    target='_blank'
+    rel='noopener noreferrer'
+    class='flex items-center gap-2 py-[.30em] sm:py-1 px-3 sm:px-4 bg-secondary_dark rounded-full scale-[1.03] cursor-pointer hover:scale-x-[.97] hover:scale-y-95 transition-transform duration-200'
+    data-title={title}
+  >
+    <img src={src} alt={title} />
+    <span class='text-sm sm:text-base'>{title}</span>
+  </a>
+</div>
+
+<style>
+  .rainbow {
+    background-image: linear-gradient(
+      120deg,
+      #00d9ff 0%,
+      #ffe884 49%,
+      #ff8383 80%,
+      #6bdaff 100%
+    );
+  }
+
+  .rainbow:hover {
+    animation: slidebg 2s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rainbow:hover {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .rainbow {
+      animation: slidebg 2s linear infinite;
+    }
+    a {
+      margin: 1px 3px;
+    }
+  }
+
+  @keyframes slidebg {
+    to {
+      background-position: 20vw;
+    }
+  }
+</style>
