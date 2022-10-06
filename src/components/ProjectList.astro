@@ -28,12 +28,13 @@ const projects = [
         <div
           class='project_inner flex h-full justify-center items-center'
           style={`background-image:url(${project.cover}) ;`}
+          data-index={project.id}
         >
           <a
             href={project.link}
             target='_blank'
             rel='noopener noreferrer'
-            class='font-bold z-40 hover:underline text-white'
+            class='font-bold z-40 hover:underline text-black'
           >
             <h2>{project.name}</h2>
           </a>
@@ -65,5 +66,15 @@ const projects = [
     inset: 0;
     background-color: rgba(0, 0, 0, 0.652);
     z-index: 0;
+  }
+
+  .project_over [data-index='1']::before {
+    background-color: #ff5757b3;
+  }
+  .project_over [data-index='2']::before {
+    background-color: #bf6bffb6;
+  }
+  .project_over [data-index='3']::before {
+    background-color: #6bff93c8;
   }
 </style>
