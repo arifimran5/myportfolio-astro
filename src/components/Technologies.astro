@@ -37,7 +37,13 @@ const techs = [
   {
     techs.map((tech) => (
       <div class='flex justify-left items-center gap-3 bg-secondary_dark max-w-[10em] px-4 py-2 rounded-full'>
-        <img class='ml-2' src={tech.thumbnail} alt={tech.title} />
+        <img
+          class='ml-2'
+          width='24'
+          height='23'
+          src={tech.thumbnail}
+          alt={tech.title}
+        />
         <span>{tech.title}</span>
       </div>
     ))
