@@ -26,7 +26,7 @@ const techs = [
     thumbnail: '/svgs/figma.svg',
   },
   {
-    id: 1,
+    id: 6,
     title: 'Tailwind',
     thumbnail: '/svgs/tailwind.svg',
   },
@@ -36,7 +36,10 @@ const techs = [
 <div class='grid grid-cols-2 sm:grid-cols-3 gap-y-8 mt-6'>
   {
     techs.map((tech) => (
-      <div class='flex justify-left items-center gap-3 bg-secondary_dark max-w-[10em] px-4 py-2 rounded-full'>
+      <div
+        class='flex justify-left items-center gap-3 bg-secondary_dark max-w-[10em] px-4 py-2 rounded-full'
+        data-title={tech.title}
+      >
         <img
           class='ml-2'
           width='24'
@@ -49,3 +52,9 @@ const techs = [
     ))
   }
 </div>
+
+<style>
+  div[data-title='Figma'] img {
+    width: 16px;
+  }
+</style>
