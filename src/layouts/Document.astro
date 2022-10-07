@@ -27,12 +27,33 @@ const { title, desc } = Astro.props;
       html {
         background-color: #161616;
         color: white;
+        scroll-behavior: smooth;
+      }
+
+      *::selection {
+        background: #c06eff;
+        color: #000;
       }
 
       body {
         margin-inline: auto;
         max-width: 50em;
         padding-inline: 1em;
+        scrollbar-color: #7bfbff #11093a;
+      }
+
+      body::-webkit-scrollbar {
+        width: 0.8em;
+      }
+
+      body::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.123);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #7bfbff;
+        border-radius: 100px;
+        outline: 1px solid rgba(0, 0, 0, 0.164);
       }
     </style>
   </body>
